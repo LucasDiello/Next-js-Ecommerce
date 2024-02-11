@@ -1,13 +1,10 @@
-import ProductList from '@/components/shop/ProductList'
 import Image from 'next/image'
-import imgBanner from '@/images/hero-image.webp'
-import Banner from '@/components/layout/Banner'
-import Footer from '@/components/layout/Footer'
+import React from 'react'
+import imgBanner from "../../images/hero-image.webp"
 
-export default function Home() {
+function Banner() {
   return (
-    <>
-    <section className='w-full h-[65vh] flex justify-center items-center relative'>
+    <section className='w-full h-[90vh] flex justify-center items-center relative'>
     <div className='bg-black w-[100%] h-[65vh] opacity-50 absolute z-10' />
     <Image src={imgBanner} alt={'banner'} className="absolute w-[100%] h-[65vh] object-cover blur-sm" />
     <div className='flex justify-center flex-col items-center absolute p-10 z-50 text-white'>
@@ -19,8 +16,7 @@ export default function Home() {
         </span>
     </div>
   </section>
-      <ProductList />
-      <Footer />
-    </>
   )
 }
+
+export default Banner
