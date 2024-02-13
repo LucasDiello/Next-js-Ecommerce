@@ -12,16 +12,8 @@ import {
   CardDescription,
 } from "../ui/card";
 import { useToast } from "../ui/use-toast";
+import { ProductCardProps } from "@/types";
 
-interface ProductCardProps {
-  id: string;
-  name: string;
-  description?: string;
-  price: number | string;
-  currency: string;
-  image: string;
-  images?: string[];
-}
 
 export default function ProductCard({
   id,
@@ -34,7 +26,7 @@ export default function ProductCard({
 }: ProductCardProps) {
   const { addItem } = useShoppingCart();
   const { toast } = useToast();
-
+  
   const formattedPrice = formatCurrencyString({
     value: Number(price),
     currency,
@@ -58,16 +50,15 @@ export default function ProductCard({
     addItem(product);
   }
   return (
-    <Card className="rounded-2xl">
+    <Card className="rounded-2xl bg-gray-50">
       <CardHeader>
-        <CardTitle className="flex items-center justify-center min-h-[3rem]">
+        <CardTitle className="flex items-center  min-h-[3rem]">
           {name}
         </CardTitle>
         <CardDescription className="relative w-full h-60 ">
           <Image
             src={image}
             fill
-            sizes="100%"
             alt={name}
             className="object-contain"
           />

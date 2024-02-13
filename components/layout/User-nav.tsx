@@ -1,3 +1,5 @@
+"use client"
+
 import {
     Avatar,
     AvatarFallback,
@@ -30,25 +32,19 @@ export default function UserNav() {
       <DropdownMenuContent className="w-56" align="end" forceMount>
         <DropdownMenuLabel className="font-normal">
           <div className="flex flex-col space-y-1">
-            <p className="text-sm font-medium leading-none">shadcn</p>
+            <p className="text-sm font-medium leading-none">Bem-vindo</p>
             <p className="text-xs leading-none text-muted-foreground">
-              m@example.com
+              boas compras!
             </p>
           </div>
         </DropdownMenuLabel>
         <DropdownMenuSeparator />
         <DropdownMenuGroup>
           <DropdownMenuItem>
+            <Link href={"/profile"}>
             Profile
+              </Link>
             <DropdownMenuShortcut>⇧⌘P</DropdownMenuShortcut>
-          </DropdownMenuItem>
-          <DropdownMenuItem>
-            Billing
-            <DropdownMenuShortcut>⌘B</DropdownMenuShortcut>
-          </DropdownMenuItem>
-          <DropdownMenuItem>
-            Settings
-            <DropdownMenuShortcut>⌘S</DropdownMenuShortcut>
           </DropdownMenuItem>
           <DropdownMenuItem>
             <Link href={"/dummy/seed"}>
@@ -59,7 +55,11 @@ export default function UserNav() {
         </DropdownMenuGroup>
         <DropdownMenuSeparator />
         <DropdownMenuItem>
+          <Link onClick={() => {
+            localStorage.clear();
+          }} href={"/"}>
             Log out
+          </Link>
           <DropdownMenuShortcut>⇧⌘Q</DropdownMenuShortcut>
         </DropdownMenuItem>
       </DropdownMenuContent>
