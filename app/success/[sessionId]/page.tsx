@@ -22,4 +22,4 @@ export default function Success({ params }: SuccessProps) {
       <h1 className="text-2xl">Obrigado e Parabéns pela Compra.</h1>
     </div>
   );
-}
+} 

@@ -1,3 +1,5 @@
+"use client"
+
 import {
     Avatar,
     AvatarFallback,
@@ -61,7 +63,11 @@ export default function UserNav() {
         </DropdownMenuGroup>
         <DropdownMenuSeparator />
         <DropdownMenuItem>
+          <Link onClick={() => {
+            localStorage.clear();
+          }} href={"/"}>
             Log out
+          </Link>
           <DropdownMenuShortcut>⇧⌘Q</DropdownMenuShortcut>
         </DropdownMenuItem>
       </DropdownMenuContent>
