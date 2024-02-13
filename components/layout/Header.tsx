@@ -6,7 +6,7 @@ import UserNav from './User-nav';
 
 function Header() {
   return (
-    <header className='shadow w-full z-30 bg-inherit absolute'>
+    <header className='shadow w-full z-30 mt-10 lg:mt-0 bg-inherit absolute'>
       <div  className="header-bg w-[100%] absolute z-50 ms-auto lg:p-10 h-full p-2 flex items-center justify-between ">
         <Logo />
         <div className='flex items-center justify-center space-x-4'>

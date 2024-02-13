@@ -3,13 +3,13 @@ import React from 'react'
 
 export default function Footer() {
   return (
-    <footer className='flex w-full border-2 bg-gray-200 h-32 p-10 items-center justify-between'>
+    <footer className='flex w-full border-2 bg-gray-200 h-32 p-10 items-center '>
         <p className='text-sm flex flex-col'>© 2023 - Lucas Tech 
             <span className='text-xs'>
-                Projeto desenvolvido com intuito de estudo e <br /> prática de desenvolvimento web. <br /> Utilizando gateway de pagamento.
+                Project developed with the purpose of study and <br /> web development practice. <br /> Using payment gateway.
             </span>
             </p>
-        <div className='flex '>
+        <div className='flex mt-10 '>
             <a href="https://www.linkedin.com/in/lucasDiello/"  target="_blank" rel="noopener noreferrer">
                 <Linkedin/>
             </a>

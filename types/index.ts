@@ -22,3 +22,13 @@ export interface DummyProduct {
     thumbnail: string;
     images: string[];
 }
+
+export interface ProductCardProps {
+    id: string;
+    name: string;
+    description?: string;
+    price: number | string;
+    currency: string;
+    image: string;
+    images?: string[];
+  }

@@ -29,7 +29,7 @@ async function getProducts() {
 export default async function ProductList() {
     const products = await getProducts();
     return (
-        <main className="p-20">
+        <main className="lg:p-20">
         <section className="grid gap-4 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
             {products?.map((product: Product) => {
                 return <ProductCard key={product.id} {...product} />

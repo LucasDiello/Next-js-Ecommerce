@@ -27,6 +27,8 @@ export async function POST(req:NextRequest) {
 
     const line_items = validateCartItems(products, cartDetails)
 
+//Verifique se o preço total é menor que 1 real, caso for lance 1 erro
+
     const session = await stripe.checkout.sessions.create({
         mode: "payment",
         payment_method_types: ["card"],

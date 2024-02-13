@@ -8,10 +8,12 @@ import { Loader, ShoppingBasket, Trash2, X } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 export default function Cart() {
-  const { cartCount, cartDetails, formattedTotalPrice, removeItem } = useShoppingCart();
+  const { cartCount, cartDetails, formattedTotalPrice, removeItem, totalPrice } = useShoppingCart();
   const [isCheckingOut, setIsCheckingOut] = useState(false);
   const [cep, setCep] = useState("");
   const [dataCep, setDataCep] = useState({} as any);
+  const validTotalPrice = cartDetails && formattedTotalPrice
+  const additionalService =  Number(totalPrice) * 0.1;
 
   async function checkout() {
     setIsCheckingOut(true);
@@ -59,7 +61,7 @@ export default function Cart() {
                   <div className="flex-1">
                     <div className="flex items-center justify-between">
                     <h1 className="text-lg font-bold mb-2 " >
-                      {cartDetails[item].name} x ({cartDetails[item].quantity})
+                      {cartDetails[item].name} ({cartDetails[item].quantity})
                     </h1>
                     <X onClick={() => removeItem(cartDetails[item].id)} />
                     </div>
@@ -83,15 +85,10 @@ export default function Cart() {
             <hr className="my-4" />
             <div className=" flex justify-between mb-2">
               <p className="text-gray-500">Order summary</p>
-              <h4 className="font-bold">$400</h4>
-            </div>
-            <div className=" flex justify-between mb-2">
-              <p className="text-gray-500">Additional Service</p>
-              <h4 className="font-bold">$10</h4>
+              <h4 className="font-bold">{validTotalPrice}</h4>
             </div>
             <div className="flex justify-between">
-              <p className="font-bold">{cartCount && formattedTotalPrice}</p>
-              <h4 className="font-bold">$370</h4>
+              <p className="font-bold">{validTotalPrice}</p>
             </div>
           </div>
         </div>
