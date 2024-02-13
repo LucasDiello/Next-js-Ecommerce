@@ -8,15 +8,13 @@ import { Loader, ShoppingBasket, Trash2, X } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 export default function Cart() {
-  const { cartCount, cartDetails, formattedTotalPrice, removeItem, totalPrice } = useShoppingCart();
-  const [isCheckingOut, setIsCheckingOut] = useState(false);
+  const { cartCount, cartDetails, formattedTotalPrice, removeItem } = useShoppingCart();
   const [cep, setCep] = useState("");
   const [dataCep, setDataCep] = useState({} as any);
-  const validTotalPrice = cartDetails && formattedTotalPrice
-  const additionalService =  Number(totalPrice) * 0.1;
+  const [isCheckout, setIsCheckout] = useState(false);
 
   async function checkout() {
-    setIsCheckingOut(true);
+    setIsCheckout(true);
     const response = await fetch("/api/checkout", {
       method: "POST",
       headers: {
@@ -27,7 +25,7 @@ export default function Cart() {
 
     const { url } = await response.json();
     window.location.href = url;
-    setIsCheckingOut(false);
+    setIsCheckout(false);
   }
 
   const handleCep = async () => {
@@ -35,9 +33,6 @@ export default function Cart() {
     const data = await response.json();
     setDataCep(data);
   };
-
-  console.log(cartDetails);
-  
 
   return (
     <section className=" flex flex-col ">
@@ -85,10 +80,10 @@ export default function Cart() {
             <hr className="my-4" />
             <div className=" flex justify-between mb-2">
               <p className="text-gray-500">Order summary</p>
-              <h4 className="font-bold">{validTotalPrice}</h4>
+              <h4 className="font-bold">{cartCount && formattedTotalPrice}</h4>
             </div>
             <div className="flex justify-between">
-              <p className="font-bold">{validTotalPrice}</p>
+              <p className="font-bold">{cartCount && formattedTotalPrice}</p>
             </div>
           </div>
         </div>
@@ -149,12 +144,12 @@ export default function Cart() {
           className="bg-sky-600 w-full mt-4"
           size={"lg"}
           onClick={checkout}
-          disabled={isCheckingOut}
+          disabled={!dataCep.cep}
         >
-          {isCheckingOut ? (
+          {isCheckout ? (
             <div className="flex items-center justify-between gap-2">
               <Loader className="animate-spin 2s repeat-infinite" />{" "}
-              Finalizando...
+              <span>Finalizando</span>
             </div>
           ) : (
             "Finalizar"

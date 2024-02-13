@@ -50,7 +50,7 @@ export default function ProductCard({
     addItem(product);
   }
   return (
-    <Card className="rounded-2xl">
+    <Card className="rounded-2xl bg-gray-50">
       <CardHeader>
         <CardTitle className="flex items-center  min-h-[3rem]">
           {name}
