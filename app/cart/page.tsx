@@ -6,6 +6,7 @@ import { Button } from "@/components/ui/button";
 import Image from "next/image";
 import { Loader, ShoppingBasket, Trash2, X } from "lucide-react";
 import { cn } from "@/lib/utils";
+import Header from "@/components/layout/Header";
 
 export default function Cart() {
   const { cartCount, cartDetails, formattedTotalPrice, removeItem } = useShoppingCart();
@@ -36,6 +37,7 @@ export default function Cart() {
 
   return (
     <section className=" flex flex-col ">
+          <Header />
       <div className="flex flex-wrap lg:flex-nowrap justify-between lg:p-40 md:p-20 p-2">
         <div className=" bg-gray-50 rounded-2xl w-full">
       <h1 className="font-bold text-sky-600 text-3xl mt-10 lg:mt-0 p-2">Shopping Cart <span className="ml-4 text-[20px] text-black">{cartCount}<span className="text-sm">items</span></span></h1>

@@ -2,11 +2,8 @@ import type { Metadata } from 'next'
 import { Inter, Oxygen } from 'next/font/google'
 import '@/styles/globals.css'
 import { cn } from '@/lib/utils'
-import Header from '@/components/layout/Header'
 import { AppCartProvider } from '@/components/shop/app-cart-provider'
 import { Toaster } from '@/components/ui/toaster'
-import Banner from '@/components/layout/Banner'
-import Footer from '@/components/layout/Footer'
 
 const inter = Inter({ subsets: ['latin'] })
 const oxygem = Oxygen({weight: ["300", "400", "700"], subsets: ['latin'] })
@@ -26,8 +23,7 @@ export default function RootLayout({
       <body className={cn(oxygem.className, "min-h-screen fle flex-col")}>
         <AppCartProvider>
           <Toaster />
-          <Header />
-          <main className='flex-grow'>
+          <main className=''>
             {children}
             </main>  
         </AppCartProvider>
