@@ -14,9 +14,24 @@ export default function Page() {
   const { toast } = useToast();
   const router = useRouter();
 
-  const saveSignupDataToCookies = (name: string, email: string, password: any) => {
+  const saveSignupDataToCookies = (e : React.MouseEvent<HTMLButtonElement>,name: string, email: string, password: any) => {
+    e.preventDefault();
     const signupData = { name, email, password };
     Cookies.set('signupData', JSON.stringify(signupData));
+    if(!name || !email || !password) {
+      return toast({
+        title: "Error",
+        description: "All fields are required",
+      })
+    }
+    setEmail('');
+    setPassword('');
+    setName('');
+    toast({
+      title: "Success",
+      description: "Account created successfully",
+      
+    })
 };
 
 
@@ -105,8 +120,8 @@ export default function Page() {
                 setPassword(e.target.value);
               }
             }/>
-            <button onClick={() => {
-              saveSignupDataToCookies(name, email, password);
+            <button onClick={(e) => {
+              saveSignupDataToCookies(e,name, email, password);
             }}>Sign Up</button>
           </form>
         </div>
