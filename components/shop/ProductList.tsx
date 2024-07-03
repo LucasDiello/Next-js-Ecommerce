@@ -31,7 +31,7 @@ export default async function ProductList() {
     return (
         <main className="lg:p-20 bg-gray-200">
         <section className="grid gap-4 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
-            {products?.map((product: Product) => {
+            {products?.slice(2,15)?.map((product: Product) => {
                 return <ProductCard key={product.id} {...product} />
             })}
         </section>

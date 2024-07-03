@@ -6,3 +6,11 @@
     background: rgb(19,17,17);
     background: linear-gradient(90deg, rgba(19,17,17,1) 34%, rgba(45,88,147,1) 82%, rgba(26,26,29,1) 100%);
 } */
+
+.shadow-drop {
+   filter:drop-shadow(2px 4px 6px rgb(196, 130, 130))
+  }
+
+.shadow-drop2 {
+  filter: drop-shadow(2px 4px 6px rgb(0, 0, 0));
+}

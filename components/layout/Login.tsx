@@ -38,6 +38,7 @@ export default function Page() {
     const checkSignupDataBeforeLogin = (e: React.MouseEvent<HTMLButtonElement>) => {
       e.preventDefault();
       const signupData = Cookies.get('signupData');
+      console.log(signupData);
       const signupDataObj = JSON.parse(signupData as any);
       console.log(signupDataObj);
       console.log(passwordLogin);

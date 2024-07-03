@@ -55,7 +55,7 @@ export default function ProductCard({
         <CardTitle className="flex items-center  min-h-[3rem]">
           {name}
         </CardTitle>
-        <CardDescription className="relative w-full h-60 ">
+        <CardDescription className="relative w-full h-60 shadow-drop ">
           <Image
             src={image}
             fill

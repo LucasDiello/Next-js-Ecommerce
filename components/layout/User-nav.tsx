@@ -16,6 +16,7 @@ import {
     DropdownMenuShortcut,
     DropdownMenuTrigger,
   } from "@/components/ui/dropdown-menu"
+import personImg from "@/images/png-transparent-person-logo-symbol-man-black-black-and-white-silhouette.png"
 import Link from "next/link";
 
 export default function UserNav() {
@@ -23,8 +24,8 @@ export default function UserNav() {
           <DropdownMenu>
       <DropdownMenuTrigger asChild>
         <Button variant="ghost" className="relative h-8 w-8 rounded-full">
-          <Avatar className="h-8 w-8">
-            <AvatarImage src="/avatars/01.png" alt="@shadcn" />
+          <Avatar className="h-8 w-8 shadow-drop2">
+            <AvatarImage src={personImg.src} alt="@shadcn" />
             <AvatarFallback>SC</AvatarFallback>
           </Avatar>
         </Button>
@@ -39,14 +40,6 @@ export default function UserNav() {
           </div>
         </DropdownMenuLabel>
         <DropdownMenuSeparator />
-        <DropdownMenuGroup>
-          <DropdownMenuItem>
-            <Link href={"/dummy/seed"}>
-            Apply Dummy Beta
-            </Link>
-          <DropdownMenuShortcut>⇧⌘Q</DropdownMenuShortcut>
-        </DropdownMenuItem>
-        </DropdownMenuGroup>
         <DropdownMenuSeparator />
         <DropdownMenuItem>
           <Link onClick={() => {
