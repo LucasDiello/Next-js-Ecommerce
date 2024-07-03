@@ -38,13 +38,14 @@ export default function Page() {
     const checkSignupDataBeforeLogin = (e: React.MouseEvent<HTMLButtonElement>) => {
       e.preventDefault();
       const signupData = Cookies.get('signupData');
-      console.log(signupData);
       const signupDataObj = JSON.parse(signupData as any);
-      console.log(signupDataObj);
-      console.log(passwordLogin);
       if (signupDataObj.email === emailLogin && signupDataObj.password === passwordLogin) {
-        router.push('/products');
-        router.refresh();
+        router.push("/products");
+        router.refresh() // Isso navegará para a mesma página, forçando um reload
+        toast({
+          title: "Success",
+          description: "Logged in successfully",
+        });
         return;
       } 
       

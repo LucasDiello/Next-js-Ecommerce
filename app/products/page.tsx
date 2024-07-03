@@ -8,12 +8,12 @@ export default function Products() {
   return (
     <>
     <Header /> 
-   <section className='w-full h-[65vh] flex justify-center items-center relative'>
+   <section className='w-full h-[65vh] flex justify-center items-center relative '>
    <div className='bg-black w-[100%] h-[65vh] opacity-50 absolute z-10' />
    <Image src={imgBanner} alt={'banner'} className="absolute w-[100%] h-[65vh] object-cover blur-sm" />
    <div className='flex justify-center flex-col items-center absolute p-10 z-50 text-white'>
      <h1 className='font-bold lg:text-7xl text-2xl'>
-       Welcome to store <span>
+       Welcome to store <span className='font-bold tracking-wider'>
          LD Tech
        </span>
      </h1>
