@@ -18,11 +18,11 @@ async function Banner() {
       <h1 className='text-7xl text-[#121212] anton-font '>LD TECH <br /> PRODUTOS TECNOLÓGICOS </h1>
       <p className='max-w-[500px]'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis assumenda dolorem doloribus debitis? A minima, praesentium suscipit, officia deserunt maiores, eos architecto temporibus vel ipsum veritatis obcaecati dolorem fugit dolore.
       </p>
-	  <a class="fancy" href="#">
-  <span class="top-key"></span>
-  <span class="text">Ir as compras!!</span>
-  <span class="bottom-key-1"></span>
-  <span class="bottom-key-2"></span>
+	  <a className="fancy" href="#">
+  <span className="top-key"></span>
+  <span className="text">Ir as compras!!</span>
+  <span className="bottom-key-1"></span>
+  <span className="bottom-key-2"></span>
 </a>
       </div>
       <section className='w-full mt-5 fle pl-20'>
