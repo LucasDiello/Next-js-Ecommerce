@@ -11,14 +11,11 @@ position: relative;;
     padding: 20px;
 }
 
-.sub-hero {
-}
 
 .anton-font {
     font-family: "Archivo Black", sans-serif;
 }   
 
-/* Adicione esses estilos no seu arquivo CSS global ou no arquivo de estilos do componente Header */
 .marquee {
     overflow: hidden;
     white-space: nowrap;
@@ -45,7 +42,6 @@ position: relative;;
     color: #fff;
     cursor: pointer;
     display: inline-block;
-    float: right;
     font-weight: 700;
     letter-spacing: 0.05em;
     margin: 0;

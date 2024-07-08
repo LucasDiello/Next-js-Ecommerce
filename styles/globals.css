@@ -1,5 +1,6 @@
 @tailwind components;
 @tailwind utilities;
+@import url('https://fonts.googleapis.com/css2?family=Archivo+Black&display=swap');
 
 /* .header-bg {
     background: rgb(19,17,17);
@@ -13,10 +14,6 @@
   margin: 0;
 }
 
-.shadow-drop {
-   filter:drop-shadow(2px 4px 6px rgb(196, 130, 130))
-  }
-
-.shadow-drop2 {
-  filter: drop-shadow(2px 4px 6px rgb(0, 0, 0));
-}
+.anton-font {
+  font-family: "Archivo Black", sans-serif;
+}   

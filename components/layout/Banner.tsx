@@ -7,11 +7,11 @@ import "@/styles/card.css"
 
 async function Banner() {
   return (
-    <section className='h-[100vh] b '>
-    <div className='sub-hero h-[100vh] w-full bg-black absolute opacity-20 z-[-1]' />
-    <div className='hero'>
-      <Header />
-      <Image src={hero} alt='hero' className='h-[100vh] object-cover absolute top-0 z-[-2]' fill />
+	  <section className='h-[100vh] b '>
+    <div className='sub-hero h-[100vh] w-full bg-black absolute opacity-20 z-[-2]' />
+		<Header />
+    <div className='hero bg-black'>
+      <Image src={hero} alt='hero' className='h-[100vh]  relative z-[-3]' fill />
     </div>
     <div className='container h-full   flex justify-between  '>
       <div className='flex flex-col justify-center w-full pb-20 space-y-10'>
@@ -25,7 +25,7 @@ async function Banner() {
   <span className="bottom-key-2"></span>
 </a>
       </div>
-      <section className='w-full mt-5 fle pl-20'>
+      <section className='w-full mt-5 fle pl-20 hidden lg:block'>
 	<div className="row flex flex-col">
 		<div className="relative left-[10%] w-[200px]">
 			<div className="card">
@@ -49,7 +49,7 @@ async function Banner() {
 				</div>
 			</div>
 		</div>
-		<div className="relative left-[10%] bottom-[120px] z-[-1] w-[200px]">
+		<div className="relative left-[10%] bottom-[120px] w-[200px]">
 			<div className="card">
 				<div className="cover item-c">
 					<h1>Air<br/>Jordan</h1>

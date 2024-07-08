@@ -52,10 +52,7 @@ export default function ProductCard({
   return (
     <Card className="rounded-2xl bg-gray-50">
       <CardHeader>
-        <CardTitle className="flex items-center  min-h-[3rem]">
-          {name}
-        </CardTitle>
-        <CardDescription className="relative w-full h-60 shadow-drop ">
+        <CardDescription className="relative w-full h-60 ">
           <Image
             src={image}
             fill
@@ -63,6 +60,9 @@ export default function ProductCard({
             className="object-contain"
           />
         </CardDescription>
+        <CardTitle className="flex items-center tracking-wide ">
+          {name}
+        </CardTitle>
       </CardHeader>
       <CardContent className="flex items-center justify-center">
         <p className="min-h-[6rem] ">{description}</p>
