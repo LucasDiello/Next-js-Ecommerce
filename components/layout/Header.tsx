@@ -3,15 +3,24 @@ import Logo from './logo';
 import CartButton from './Cart-button';
 import UserNav from './User-nav';
 
-
 function Header() {
   return (
-    <header className='shadow w-full z-30 mt-5 lg:mt-0 bg-inherit absolute'>
-      <div  className="header-bg w-[100%] absolute z-50 ms-auto lg:p-10 h-full p-2 flex items-center justify-between ">
-        <Logo />
-        <div className='flex items-center justify-center space-x-4'>
+    <header className='bg-black w-full'>
+      <div className="flex container mx-auto items-center text-white justify-between">
+        <a href="/products">
+        HOME
+        </a>
+        <div className='flex space-x-10'>
           <CartButton />
           <UserNav />
+        </div>
+      </div>
+      <div className='text-end text-white text-[10px] h-4 bg-gray-800'>
+        <div className="marquee aston-font uppercase">
+          <p>
+          Descubra as últimas tendências os nossos produtos exclusivos.
+          Com as melhores ofertas e <span className='font-bold'>promoções!</span>.
+          </p>
         </div>
       </div>
     </header>

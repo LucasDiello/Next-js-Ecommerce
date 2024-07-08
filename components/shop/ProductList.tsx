@@ -3,7 +3,7 @@ import { Product } from "@/types";
 import Stripe from "stripe";
 import ProductCard from "./ProductCard";
 
-async function getProducts() {
+export async function getProducts() {
     try{
         const stripeProducts = await stripe.products.list({
             limit: 100,
