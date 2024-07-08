@@ -36,7 +36,7 @@ export default async function ProductList() {
           return <ProductCard key={product.id} {...product} />;
         })}
       </section>
-      <div className="w-full h-[90vh]  flex flex-col justify-center">
+      <div className="w-full lg:h-[90vh]  flex flex-col justify-center">
         <div className="row1-container">
           <div className="box box-down cyan space-y-5">
             <h2>Produtos Conferidos</h2>
@@ -47,6 +47,7 @@ export default async function ProductList() {
             <img
               src="https://assets.codepen.io/2301174/icon-supervisor.svg"
               alt=""
+              className="w-[40px] !m-0 lg:w-[70px]"
             />
           </div>
 
@@ -59,6 +60,7 @@ export default async function ProductList() {
             <img
               src="https://assets.codepen.io/2301174/icon-team-builder.svg"
               alt=""
+              className="w-[40px] !m-0 lg:w-[70px]"
             />
           </div>
 
@@ -71,6 +73,7 @@ export default async function ProductList() {
             <img
               src="https://assets.codepen.io/2301174/icon-calculator.svg"
               alt=""
+              className="w-[40px] !m-0 lg:w-[70px]"
             />
           </div>
         </div>
@@ -84,11 +87,12 @@ export default async function ProductList() {
             <img
               src="https://assets.codepen.io/2301174/icon-karma.svg"
               alt=""
+              className="w-[40px] !m-0 lg:w-[70px]"
             />
           </div>
         </div>
       </div>
-      <section className="grid container gap-4 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 pt-16">
+      <section className="grid container gap-4 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 pt-16 pb-16">
         {products?.slice(6, 15)?.map((product: Product) => {
           return <ProductCard key={product.id} {...product} />;
         })}

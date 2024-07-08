@@ -77,7 +77,7 @@
 
 
 
-@media (min-width: 950px) {
+@media (min-width: 1200px) {
     .row1-container {
         display: flex;
         justify-content: center;
