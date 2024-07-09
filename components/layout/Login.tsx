@@ -100,72 +100,73 @@ export default function Page() {
 
   return (
     <div>
-      <div className="container containe lg:w-screen lg:h-screen md:w-[700px] md:h-[400px] h-screen w-screen" id="container">
-        <div className="form-container sign-up-container">
+    <div className="container containe lg:w-screen lg:h-screen md:w-[700px] md:h-[400px] h-screen w-screen" id="container">
+       <div className="form-container sign-up-container">
           <form action="#" className="lg:p-10 space-y-7">
-            <h1 className="text-4xl tracking-wide">Create Account</h1>
-            <p className="text-xs">or use your <span className="text-[#FF4B2B]">email</span> for registration</p>
-            <input type="text" placeholder="Name" value={name} onChange={
-              (e) => {
-                setName(e.target.value);
-              }
-            
-            }/>
-            <input type="email" placeholder="Email" value={email} onChange={
-              (e) => {
-                setEmail(e.target.value);
-              }
-            
-            }/>
-            <input type="password" placeholder="Password" value={password} onChange={
-              (e) => {
-                setPassword(e.target.value);
-              }
-            }/>
-            <button onClick={(e) => {
-              saveSignupDataToCookies(e,name, email, password);
-            }}>Sign Up</button>
+             <h1 className="text-4xl tracking-wide">Criar Conta</h1>
+             <p className="text-xs">ou use seu <span className="text-[#FF4B2B]">e-mail</span> para registro</p>
+             <input type="text" placeholder="Nome" value={name} onChange={
+                (e) => {
+                   setName(e.target.value);
+                }
+             
+             }/>
+             <input type="email" placeholder="E-mail" value={email} onChange={
+                (e) => {
+                   setEmail(e.target.value);
+                }
+             
+             }/>
+             <input type="password" placeholder="Senha" value={password} onChange={
+                (e) => {
+                   setPassword(e.target.value);
+                }
+             }/>
+             <button onClick={(e) => {
+                saveSignupDataToCookies(e,name, email, password);
+             }}>Registrar</button>
           </form>
-        </div>
-        <div className="form-container sign-in-container">
+       </div>
+       <div className="form-container sign-in-container">
           <form className="lg:p-20 space-y-4" autoComplete="on">
-            <h1 className="text-4xl tracking-wide">Sign in</h1>
-            <p className="text-xs">or use your <span className="text-[#FF4B2B] font-bold">account</span></p>
-            <input type="email" placeholder="Email" autoComplete="on" value={emailLogin} onChange={
-              (e) => {
-                setEmailLogin(e.target.value);
-              }
-            } />
-            <input type="password" placeholder="Password" value={passwordLogin} onChange={
-              (e) => {
-                setPasswordLogin(e.target.value);
-              }
-            }/>
-            <a>Forgot your password?</a>
-            <button onClick={checkSignupDataBeforeLogin}>Sign In</button>
+             <h1 className="text-4xl tracking-wide">Entrar</h1>
+             <p className="text-xs">ou use sua <span className="text-[#FF4B2B] font-bold">conta</span></p>
+             <input type="email" placeholder="E-mail" autoComplete="on" value={emailLogin} onChange={
+                (e) => {
+                   setEmailLogin(e.target.value);
+                }
+             } />
+             <input type="password" placeholder="Senha" value={passwordLogin} onChange={
+                (e) => {
+                   setPasswordLogin(e.target.value);
+                }
+             }/>
+             <a>Esqueceu sua senha?</a>
+             <button onClick={checkSignupDataBeforeLogin}>Entrar</button>
           </form>
-        </div>
-        <div className="overlay-container">
+       </div>
+       <div className="overlay-container">
           <div className="overlay">
-            <div className="overlay-panel overlay-left">
-              <h1>Welcome Back!</h1>
-              <p>
-                To keep connected with us please login with your personal info
-              </p>
-              <button className="ghost" id="signIn">
-                Sign In
-              </button>
-            </div>
-            <div className="overlay-panel overlay-right lg:p-10">
-              <h1>Hello, Friend!</h1>
-              <p>Enter your personal details and start journey with us</p>
-              <button className="ghost" id="signUp">
-                Sign Up
-              </button>
-            </div>
+             <div className="overlay-panel overlay-left">
+                <h1>Bem-vindo de Volta!</h1>
+                <p>
+                   Para se manter conectado conosco, faça login com suas informações pessoais
+                </p>
+                <button className="ghost" id="signIn">
+                Entrar
+                </button>
+             </div>
+             <div className="overlay-panel overlay-right lg:p-10">
+                <h1>Olá, Amigo!</h1>
+                <p>Informe seus detalhes pessoais e comece sua jornada conosco</p>
+                <button className="ghost" id="signUp">
+                Registrar
+                </button>
+             </div>
           </div>
-        </div>
-      </div>
+       </div>
     </div>
+ </div>
+ 
   );
 }
