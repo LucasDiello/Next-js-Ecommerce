@@ -61,10 +61,10 @@ export default function ProductCard({
       <CardContent className="flex items-center justify-center">
         <p className="min-h-[6rem] leading-7 text-sm ">{description}</p>
       </CardContent>
-      <CardFooter className="flex items-center justify-between pt-10 ">
+      <CardFooter className="flex items-center justify-between  ">
         <div className="text-sm">
-          <p>Preço</p>
-          <p>{formattedPrice}</p>
+          <p className="m-0">Preço</p>
+          <p className="m-0">{formattedPrice}</p>
         </div>
         <button className="cartBtn" onClick={addToCart}>
           <svg

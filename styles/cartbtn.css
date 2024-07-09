@@ -15,6 +15,7 @@
     transition: all 0.3s ease-in-out;
     cursor: pointer;
     overflow: hidden;
+    padding: 0;
   }
   
   .cart {

@@ -8,7 +8,7 @@ import "@/styles/card.css"
 async function Banner() {
   return (
 	  <section className='h-[100vh] b '>
-    <div className='sub-hero h-[100vh] w-full bg-black absolute opacity-20 z-[-2]' />
+    <div className='sub-hero h-[100vh] w-full bg-black absolute opacity-10 z-[-2]' />
 		<Header />
     <div className='hero bg-black'>
       <Image src={hero} alt='hero' className='h-[100vh] object-cover relative z-[-3]' fill />
