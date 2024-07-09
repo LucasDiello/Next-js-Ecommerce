@@ -2,7 +2,6 @@ import stripe from "@/lib/stripe";
 import { Product } from "@/types";
 import Stripe from "stripe";
 import ProductCard from "./ProductCard";
-import Banner from "../layout/Banner";
 import "@/styles/cards.css";
 export async function getProducts() {
   try {
@@ -32,7 +31,7 @@ export default async function ProductList() {
   return (
     <main className=" bg-gray-200">
       <section className="grid container gap-4 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 pt-10">
-        {products?.slice(2, 6)?.map((product: Product) => {
+        {products?.slice(0, 4)?.map((product: Product) => {
           return <ProductCard key={product.id} {...product} />;
         })}
       </section>
@@ -47,7 +46,7 @@ export default async function ProductList() {
             <img
               src="https://assets.codepen.io/2301174/icon-supervisor.svg"
               alt=""
-              className="w-[40px] !m-0 lg:w-[70px]"
+              className="w-[20px] !m-0 xl:w-[70px]"
             />
           </div>
 
@@ -60,7 +59,7 @@ export default async function ProductList() {
             <img
               src="https://assets.codepen.io/2301174/icon-team-builder.svg"
               alt=""
-              className="w-[40px] !m-0 lg:w-[70px]"
+              className="w-[20px] !m-0 xl:w-[70px]"
             />
           </div>
 
@@ -73,7 +72,7 @@ export default async function ProductList() {
             <img
               src="https://assets.codepen.io/2301174/icon-calculator.svg"
               alt=""
-              className="w-[40px] !m-0 lg:w-[70px]"
+              className="w-[20px] !m-0 xl:w-[70px]"
             />
           </div>
         </div>
@@ -87,13 +86,13 @@ export default async function ProductList() {
             <img
               src="https://assets.codepen.io/2301174/icon-karma.svg"
               alt=""
-              className="w-[40px] !m-0 lg:w-[70px]"
+              className="w-[20px] !m-0 xl:w-[70px]"
             />
           </div>
         </div>
       </div>
       <section className="grid container gap-4 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 pt-16 pb-16">
-        {products?.slice(6, 15)?.map((product: Product) => {
+        {products?.slice(14, 22)?.map((product: Product) => {
           return <ProductCard key={product.id} {...product} />;
         })}
       </section>

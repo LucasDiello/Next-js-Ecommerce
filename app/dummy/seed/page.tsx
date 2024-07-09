@@ -2,7 +2,7 @@ import stripe from "@/lib/stripe";
 import { DummyProduct, Product } from "@/types";
 
 async function getDummyProducts() {
-  const response = await fetch("https://dummyjson.com/products?limit=100");
+  const response = await fetch("https://dummyjson.com/products/category/smartphones");
   const dummyData = await response.json();
   const products = dummyData.products.map((product: DummyProduct) => {
     return {

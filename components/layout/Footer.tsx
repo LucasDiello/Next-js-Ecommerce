@@ -39,7 +39,7 @@ const Footer = () => {
             <h4>siga-nos</h4>
             <div className="social-links">
               <a href="#">
-                <FacebookIcon />
+                <GithubIcon />
               </a>
               <a href="#">
                 <InstagramIcon />

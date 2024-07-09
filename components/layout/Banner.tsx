@@ -60,7 +60,7 @@ async function Banner() {
 				</div>
 			</div>
 		</div>
-    <div className="hidden relative left-[35%] bottom-[180px] w-[200px] xl:block">
+    <div className="hidden relative left-[35%] bottom-[180px] w-[200px] 2xl:block">
 			<div className="card">
 				<div className="cover item-d">
 					<h1>Air<br/>Max</h1>
