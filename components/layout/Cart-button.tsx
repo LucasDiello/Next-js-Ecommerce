@@ -12,7 +12,7 @@ export default function CartButton() {
       href={"/cart"}
       className="flex items-center justify-center gap-2 no-underline"
     >
-        <ShoppingCart className=" h-6 w-6 m-0" color="white" />
+        <ShoppingCart size={16} className="m-0" color="white" />
         {cartCount ? (
           <span className="text-sm text-white sans-fonte  tracking-wider">{formattedTotalPrice} ({cartCount})</span>
         ) : <span className=" text-white sans-fonte  tracking-wider">00,00</span>}

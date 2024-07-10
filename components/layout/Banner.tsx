@@ -15,7 +15,7 @@ async function Banner() {
     </div>
     <div className='container h-full   flex justify-between  '>
       <div className='flex flex-col justify-center w-full pb-20 space-y-10'>
-      <h1 className='lg:text-7xl text-3xl text-[#121212] anton-font '>LD TECH <br /> PRODUTOS TECNOLÓGICOS </h1>
+      <h1 className='lg:text-7xl text-4xl text-[#121212] anton-font '>LD TECH <br /> PRODUTOS TECNOLÓGICOS </h1>
       <p className='max-w-[500px] text-sm lg:text-base'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis assumenda dolorem doloribus debitis? A minima, praesentium suscipit, officia deserunt maiores, eos architecto temporibus vel ipsum veritatis obcaecati dolorem fugit dolore.
       </p>
 	  <a className="fancy" href="#">

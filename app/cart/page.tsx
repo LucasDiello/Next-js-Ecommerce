@@ -109,7 +109,7 @@ export default function Cart() {
                   placeholder="Endereço"
                   className="w-full rounded-md bg-inherit border-b-[1px] border-gray-300 p-2 mb-2"
                 />
-                <div className="flex">
+                <div className="flex ">
                   <input
                     type="text"
                     placeholder="CEP"
@@ -117,10 +117,12 @@ export default function Cart() {
                     maxLength={8}
                     className="w-full rounded-md bg-inherit border-b-[1px] border-gray-300 p-2 mb-2"
                   />
-                  <Button className="bg-gray-300" variant={'default'} onClick={handleCep}>
+                </div>
+                  <Button className="bg-gray-300 h-10 border-none"  onClick={handleCep}
+                  disabled={cep.length < 8}
+                  >
                     Buscar
                   </Button>
-                </div>
               </div>
             </div>
             <h1 className="text-lg font-bold mb-2">Detalhes de Entrega</h1>
@@ -144,10 +146,10 @@ export default function Cart() {
               </div>
             </div>
             <Button
-              className="bg-sky-600 w-full mt-4"
+              className={`bg-sky-600 w-full mt-4`}
               size={"lg"}
               onClick={checkout}
-              disabled={!dataCep.cep}
+              disabled={!dataCep.cep ||  cartCount === undefined || cartCount <= 0}
             >
               {isCheckout ? (
                 <div className="flex items-center justify-between gap-2">
@@ -160,13 +162,6 @@ export default function Cart() {
             </Button>
           </div>
         </div>
-      </div>
-      <div
-        className={cn(
-          "flex items-center justify-end",
-          cartCount === undefined || cartCount <= 0 ? "hidden" : ""
-        )}
-      >
       </div>
     </section>
   );
