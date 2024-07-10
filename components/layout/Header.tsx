@@ -21,7 +21,7 @@ function Header() {
         <div className="marquee aston-font uppercase">
           <p className='m-0'>
           Descubra as últimas tendências os nossos produtos exclusivos.
-          Com as melhores ofertas e <span className='font-bold'>promoções!</span>.
+         <span className='hidden lg:block'>Com as melhores ofertas e <span className='font-bold'>promoções!</span>.</span>
           </p>
         </div>
       </div>

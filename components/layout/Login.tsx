@@ -30,7 +30,6 @@ export default function Page() {
     toast({
       title: "Success",
       description: "Account created successfully",
-      
     })
 };
 
@@ -103,7 +102,7 @@ export default function Page() {
     <div className="container containe lg:w-screen lg:h-screen md:w-[700px] md:h-[400px] h-screen w-screen" id="container">
        <div className="form-container sign-up-container">
           <form action="#" className="lg:p-10 space-y-7">
-             <h1 className="text-4xl tracking-wide">Criar Conta</h1>
+             <h1 className="text-3xl tracking-wide">Criar Conta</h1>
              <p className="text-xs">ou use seu <span className="text-[#FF4B2B]">e-mail</span> para registro</p>
              <input type="text" placeholder="Nome" value={name} onChange={
                 (e) => {

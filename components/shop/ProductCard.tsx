@@ -24,7 +24,7 @@ export default function ProductCard({
   images,
 }: ProductCardProps) {
   const { addItem } = useShoppingCart();
-  const { toast } = useToast();
+  const { toast, dismiss } = useToast();
 
   const formattedPrice = formatCurrencyString({
     value: Number(price),
