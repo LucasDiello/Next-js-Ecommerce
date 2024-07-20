@@ -18,8 +18,8 @@ function Header() {
         </div>
       </div>
       <div className='text-end w-full text-white h-4 bg-gray-800'>
-        <div className="marquee aston-font uppercase">
-          <p className='m-0'>
+        <div className="marquee hidden md:flex aston-font uppercase">
+          <p className='m-0 '>
           Descubra as últimas tendências os nossos produtos exclusivos.
          Com as melhores ofertas e promoções!
           </p>
