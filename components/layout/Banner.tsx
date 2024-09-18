@@ -1,80 +1,59 @@
+"use client"
+
 import Image from 'next/image'
-import React from 'react'
+import React, { useRef } from 'react'
 import Header from './Header'
 import hero from '../../images/hero.jpg'
 import "@/styles/banner.css"
 import "@/styles/card.css"
+import { ArrowDown } from 'lucide-react'
 
-async function Banner() {
+
+ function Banner() {
+  // Cria um ref para a próxima seção
+  const nextSectionRef = useRef<HTMLElement | null>(null)
+
+  // Função para rolar até a próxima seção
+  const scrollToNextSection = () => {
+    if (nextSectionRef.current) {
+      nextSectionRef.current.scrollIntoView({ behavior: 'smooth' })
+    }
+  }
+
   return (
-	  <section className='h-[100vh] b '>
-    <div className='sub-hero h-[100vh] w-full bg-black absolute opacity-10 z-[-2]' />
-		<Header />
-    <div className='hero bg-black'>
-      <Image src={hero} alt='hero' className='h-[100vh] object-cover relative z-[-3]' fill />
-    </div>
-    <div className='container h-full   flex justify-between  '>
-      <div className='flex flex-col justify-center w-full pb-20 space-y-10'>
-      <h1 className='lg:text-7xl text-4xl text-[#121212] anton-font '>LD TECH <br /> PRODUTOS TECNOLÓGICOS </h1>
-      <p className='max-w-[500px] text-sm lg:text-base'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis assumenda dolorem doloribus debitis? A minima, praesentium suscipit, officia deserunt maiores, eos architecto temporibus vel ipsum veritatis obcaecati dolorem fugit dolore.
-      </p>
-	  <a className="fancy" href="#">
-  <span className="top-key"></span>
-  <span className="text">Ir as compras!!</span>
-  <span className="bottom-key-1"></span>
-  <span className="bottom-key-2"></span>
-</a>
+    <section className='h-[100vh] b'>
+      <div className='sub-hero h-[100vh] w-full bg-black absolute opacity-10 z-[-2]' />
+      <Header />
+      <div className='hero bg-black'>
+        <Image src={hero} alt='hero' className='h-[100vh] object-cover relative z-[-3]' fill />
       </div>
-      <section className='w-full mt-5 fle pl-20 hidden lg:block'>
-	<div className="row flex flex-col">
-		<div className="relative left-[10%] w-[200px]">
-			<div className="card">
-				<div className="cover item-a">
-					<h1>Celular<br/>Iphone 8</h1>
-					<span className="price">R$500+</span>
-					<div className="card-back">
-						<a href="#">Veja mais</a>
-					</div>
-				</div>
-			</div>
+      <div className='w-full h-[80vh] flex justify-center items-center text-white'>
+        <div className='w-full flex justify-center flex-col items-center space-y-5'>
+          <p className='text-xs tracking-widest'>
+            This is a shop where you can buy all the things you need. We have
+          </p>
+          <h1 className='h1-shop font-[cursive] text-white text-9xl'>
+            Welcome to the <span className='shop'>Shop</span>
+          </h1>
+          <button className="btn-17 !mt-20">
+  <span className="text-container">
+    <span className="text">Let's go buy!!</span>
+  </span>
+</button>
+        </div>
+      </div>
+      <section ref={nextSectionRef} className='h-[100vh]  absolute w-full '>
+        <h2 className='text-center text-4xl font-[cursive] text-white '>
+			Explore our products
+		</h2>
+		<div className='w-full flex justify-center mt-10'>
+      <div onClick={scrollToNextSection} className='hover:rounded-[50%] hover:bg-[#333] hover:text-white hover:transition-all cursor-pointer w-12 h-12 flex justify-center items-center '>
+		<ArrowDown size={30} className=' text-white '  />
+      </div>
 		</div>
-		<div className=" relative left-[35%] bottom-[60px] w-[200px]">
-			<div className="card">
-				<div className="cover item-b">
-					<h1>Relógio<br/>Smart watch</h1>
-					<span className="price">R$500+</span>
-					<div className="card-back">
-						<a href="#">Veja mais</a>
-					</div>
-				</div>
-			</div>
-		</div>
-		<div className="relative left-[10%] bottom-[120px] w-[200px]">
-			<div className="card">
-				<div className="cover item-c">
-					<h1>Air<br/>Jordan</h1>
-					<span className="price">R$500-</span>
-					<div className="card-back">
-						<a href="#">Veja mais</a>
-					</div>
-				</div>
-			</div>
-		</div>
-    <div className="hidden relative left-[35%] bottom-[180px] w-[200px] 2xl:block">
-			<div className="card">
-				<div className="cover item-d">
-					<h1>Air<br/>Max</h1>
-					<span className="price">R$500-</span>
-					<div className="card-back">
-						<a href="#">Veja mais</a>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-</section>
-    </div>
-  </section>
+      </section>
+    </section>
   )
 }
+
 export default Banner

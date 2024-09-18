@@ -8,43 +8,43 @@ const Footer = () => {
       <div className="container">
         <div className="row">
           <div className="footer-col">
-            <h4>empresa</h4>
+            <h4>company</h4>
             <ul>
-              <li><a href="#">sobre nós</a></li>
-              <li><a href="#">nossos serviços</a></li>
-              <li><a href="#">política de privacidade</a></li>
-              <li><a href="#">programa de afiliados</a></li>
+              <li><a href="#">about us</a></li>
+              <li><a href="#">our services</a></li>
+              <li><a href="#">privacy policy</a></li>
+              <li><a href="#">affiliate program</a></li>
             </ul>
           </div>
           <div className="footer-col">
-            <h4>ajuda</h4>
+            <h4>help</h4>
             <ul>
               <li><a href="#">FAQ</a></li>
-              <li><a href="#">envio</a></li>
-              <li><a href="#">devoluções</a></li>
-              <li><a href="#">status do pedido</a></li>
-              <li><a href="#">opções de pagamento</a></li>
+              <li><a href="#">shipping</a></li>
+              <li><a href="#">returns</a></li>
+              <li><a href="#">order status</a></li>
+              <li><a href="#">payment options</a></li>
             </ul>
           </div>
           <div className="footer-col">
-            <h4>loja online</h4>
+            <h4>online shop</h4>
             <ul>
-              <li><a href="#">relógios</a></li>
-              <li><a href="#">bolsas</a></li>
-              <li><a href="#">sapatos</a></li>
-              <li><a href="#">vestidos</a></li>
+              <li><a href="#">watches</a></li>
+              <li><a href="#">bags</a></li>
+              <li><a href="#">shoes</a></li>
+              <li><a href="#">dresses</a></li>
             </ul>
           </div>
           <div className="footer-col">
-            <h4>siga-nos</h4>
-            <div className="social-links">
-              <a href="#">
+            <h4>follow us</h4>
+            <div className="social-links flex ">
+              <a href="#" className='flex justify-center items-center '>
                 <GithubIcon />
               </a>
-              <a href="#">
+              <a href="#"  className='flex justify-center items-center '>
                 <InstagramIcon />
               </a>
-              <a href="#">
+              <a href="#"  className='flex justify-center items-center '>
                 <LinkedinIcon />
               </a>
             </div>
