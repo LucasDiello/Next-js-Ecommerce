@@ -43,8 +43,8 @@ export default function ProductCard({
       image,
     };
     toast({
-      title: "Produto adicionado ao carrinho :)",
-      description: `${name} foi adicionado ao carrinho.`,
+      title: "product added to cart :)",
+      description: `${name} has been added to cart.`,
     });
     addItem(product);
   }

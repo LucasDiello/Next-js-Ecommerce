@@ -4,6 +4,7 @@ import CartButton from './Cart-button';
 import { ArrowBigLeftIcon } from 'lucide-react';
 import Link from 'next/link';
 import { ImExit } from 'react-icons/im';
+import "@/styles/banner.css"
 
 function Header() {
   return (
@@ -23,7 +24,7 @@ function Header() {
           </Link>
         </div>
       </div>
-      <div className='text-end w-full text-white h-4 bg-gray-800'>
+      <div className='text-end w-full overflow-hidden text-white h-4 bg-gray-800'>
         <div className="marquee hidden md:flex aston-font uppercase">
           <p className='m-0 '>
           Discover the latest trends in our exclusive products.

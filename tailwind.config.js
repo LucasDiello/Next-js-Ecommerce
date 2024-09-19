@@ -66,10 +66,18 @@ module.exports = {
           from: { height: "var(--radix-accordion-content-height)" },
           to: { height: "0" },
         },
+        "visible": {
+          '0%': { opacity: '0', height: '0' },
+          '25%': { opacity: '0.5', height: '3rem' },
+          '50%': { opacity: '0.75', height: '4rem' },
+          '75%': { opacity: '0.9', height: '5rem' },
+          '100%': { opacity: '1', height: '6rem' },
+        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
+        "visible": "visible 2s ease-out",
       },
     },
   },

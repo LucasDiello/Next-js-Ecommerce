@@ -47,7 +47,7 @@ import { ArrowDown } from 'lucide-react'
 			Explore our products
 		</h2>
 		<div className='w-full flex justify-center mt-10'>
-      <div onClick={scrollToNextSection} className='hover:rounded-[50%] hover:bg-[#333] hover:text-white hover:transition-all cursor-pointer w-12 h-12 flex justify-center items-center '>
+      <div onClick={scrollToNextSection} className='animate-bounce hover:rounded-[50%] hover:bg-[#333] hover:text-white hover:transition-all cursor-pointer w-12 h-12 flex justify-center items-center '>
 		<ArrowDown size={30} className=' text-white '  />
       </div>
 		</div>
