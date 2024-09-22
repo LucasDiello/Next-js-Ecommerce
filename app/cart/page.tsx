@@ -35,7 +35,7 @@ export default function Cart() {
         This app not a real store. The price is not real, so dont worry about buying anything.<br />
         Thanks for visiting! If you want to know more about me, visit my <a href="https://github.com/LucasDiello" className="ml-2 text-white">Github</a>
         </p>
-        <button onClick={() => setOpen(false)}>
+        <button className="cursor-pointer" onClick={() => setOpen(false)}>
           <X />
         </button>
         </div>}
