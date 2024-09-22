@@ -32,8 +32,8 @@ import { ArrowDown } from 'lucide-react'
           <p className='text-xs tracking-widest'>
             This is a shop where you can buy all the things you need. We have
           </p>
-          <h1 className='h1-shop font-[cursive] text-white text-9xl'>
-            Welcome to the <span className='shop'>Shop</span>
+          <h1 className='h1-shop font-[cursive] text-white text-8xl'>
+            Welcome to the <span className='shop'>LDshop</span>
           </h1>
           <button className="btn-17 !mt-20">
   <span className="text-container">
@@ -43,7 +43,7 @@ import { ArrowDown } from 'lucide-react'
         </div>
       </div>
       <section ref={nextSectionRef} className='h-[100vh]  absolute w-full '>
-        <h2 className='text-center text-4xl font-[cursive] text-white '>
+        <h2 className='text-center text-3xl font-[cursive] text-white '>
 			Explore our products
 		</h2>
 		<div className='w-full flex justify-center mt-10'>
