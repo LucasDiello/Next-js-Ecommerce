@@ -32,7 +32,7 @@ export default function Cart() {
       <Header />
     { open && <div className="animate-visible absolute z-20 bottom-0 w-full bg-sky-600 h-24 flex justify-center items-center gap-10">
         <p>
-        This is a app for studing purposes. It's not a real store. The price is not real, so don't worry about buying anything. <br />
+        This is a app for studing purposes. It s not a real store. The price is not real, so don't worry about buying anything. <br />
         Thanks for visiting! If you want to know more about me, visit my <a href="https://github.com/LucasDiello" className="ml-2 text-white">Github</a>
         </p>
         <button onClick={() => setOpen(false)}>
