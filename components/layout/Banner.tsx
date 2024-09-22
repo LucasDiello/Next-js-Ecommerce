@@ -37,7 +37,7 @@ import { ArrowDown } from 'lucide-react'
           </h1>
           <button className="btn-17 !mt-20">
   <span className="text-container">
-    <span className="text">Let's go buy!!</span>
+    <span className="text">Let&apos;s go buy!!</span>
   </span>
 </button>
         </div>
