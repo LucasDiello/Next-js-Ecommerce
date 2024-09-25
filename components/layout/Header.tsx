@@ -10,7 +10,7 @@ function Header() {
   return (
     <header className='bg-[#121212] w-full h-9 text-sm'>
       <div className="flex container mx-auto items-center text-white justify-between">
-        <a href="/products" className='m-0 no-underline  text-white sans-fonte font-bold tracking-wider flex items-center'>
+        <a href="/" className='m-0 no-underline  text-white sans-fonte font-bold tracking-wider flex items-center'>
         <ArrowBigLeftIcon size={16} className="m-0" color="white" />
         HOME
         </a>

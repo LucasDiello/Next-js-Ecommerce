@@ -31,6 +31,8 @@ export default function ProductCard({
     currency,
     language: "pt-BR",
   });
+  console.log(currency)
+  console.log("formated", Number(price))
 
   async function addToCart(e: React.MouseEvent<HTMLButtonElement>) {
     e.preventDefault();
@@ -49,7 +51,7 @@ export default function ProductCard({
     addItem(product);
   }
   return (
-    <Card className="rounded-2xl bg-gray-50">
+    <Card className="rounded-2xl bg-gray-100">
       <CardHeader>
         <CardDescription className="relative w-full h-60 ">
           <Image src={image} fill alt={name} className="object-contain" />

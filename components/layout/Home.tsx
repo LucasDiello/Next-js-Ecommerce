@@ -9,10 +9,15 @@ import card1Bottom from "@/images/1482.jpg";
 import card2Bottom from "@/images/1483.jpg";
 import { ArrowDown } from "lucide-react";
 
-function Hero() {
-  // Cria um ref para a próxima seção
+function Home() {
+
   const nextSectionRef = useRef<HTMLElement | null>(null);
 
+  const scrollToNextSection = () => {
+    if (nextSectionRef.current) {
+      nextSectionRef.current.scrollIntoView({ behavior: "smooth" });
+    }
+  };
 
   return (
     <section className="h-[100vh] flex flex-col bg-[#faf5f5]">
@@ -113,22 +118,24 @@ function Hero() {
       </div>
       <div className="marcas mt-20">
         <div className="flex justify-center items-center space-x-5">
-          <div className="cursor-pointer airpods1 h-[100px] w-[100px]  rounded-full">
+          <div onClick={scrollToNextSection} className="cursor-pointer airpods1 h-[100px] w-[100px]  rounded-full">
           <Image src={card1Bottom} alt="Card 1" className="object-cover relative  h-full w-full rounded-full"  />
           </div>
-          <div className="cursor-pointer airpods2 h-[100px] w-[100px]  rounded-full">
+          <div onClick={scrollToNextSection} className="cursor-pointer airpods2 h-[100px] w-[100px]  rounded-full">
           <Image src={card2Bottom} alt="Card 1" className="object-cover relative  h-full w-full rounded-full"  />
           </div>
         </div>
       </div>
 
       <div className='w-full flex justify-center mt-4'>
-      <div className='animate-bounce hover:rounded-[50%] hover:bg-[#ffffff] hover:text-black hover:transition-all cursor-pointer w-12 h-12 flex justify-center items-center '>
-		<ArrowDown size={30} className=' text-black '  />
-      </div>
+      <button className='border-none bg-inherit animate-bounce hover:rounded-[50%] hover:bg-[#ffffff] hover:text-black hover:transition-all cursor-pointer w-12 h-12 flex justify-center items-center '>
+		<ArrowDown onClick={scrollToNextSection} size={30} className=' text-black '  />
+      </button>
 		</div>
+
+    <section ref={nextSectionRef}/>
     </section>
   );
 }
 
-export default Hero;
+export default Home;

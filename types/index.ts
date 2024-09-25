@@ -32,3 +32,12 @@ export interface ProductCardProps {
     image: string;
     images?: string[];
   }
+
+export interface OthersProductsProps {
+    imageUrl: string;
+    altText: string;
+    name: string;
+    description: string;
+    originalPrice: string;
+    discountedPrice: string;
+};
