@@ -1,10 +1,10 @@
+"use client"
 import React from 'react';
-import Logo from './logo';
 import CartButton from './Cart-button';
 import { ArrowBigLeftIcon } from 'lucide-react';
 import Link from 'next/link';
 import { ImExit } from 'react-icons/im';
-import "@/styles/banner.css"
+import "@/styles/header.css"
 
 function Header() {
   return (
@@ -18,7 +18,7 @@ function Header() {
           <CartButton />
           <Link onClick={() => {
             localStorage.clear();
-          }} href={"/"} className="text-white flex items-center justify-center gap-2 sans-font no-underline tracking-wider">
+          }} href={"/login"} className="text-white flex items-center justify-center gap-2 sans-font no-underline tracking-wider">
             <ImExit size={16}/>
             Log out
           </Link>

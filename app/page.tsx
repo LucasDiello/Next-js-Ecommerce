@@ -1,15 +1,17 @@
 import ProductList from '@/components/shop/ProductList'
-import Image from 'next/image'
-import imgBanner from '@/images/hero-image.webp'
-import Banner from '@/components/layout/Banner'
+import Footer from '@/components/layout/Footer'
+import Hero from '@/components/layout/Hero'
 import Header from '@/components/layout/Header'
-import Cookies from 'js-cookie'
-import Login from '@/components/layout/Login'
+import ItensModal from '@/components/modal/ItensModal'
 
 export default function Home() {
   return (
     <>
-    <Login />
+    <ItensModal />
+      <Header />
+      <Hero />
+     <ProductList />
+     <Footer />
     </>
   )
 }

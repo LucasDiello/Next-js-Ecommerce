@@ -4,7 +4,6 @@ import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
 import { Loader, ShoppingBasket, Trash2, X } from "lucide-react";
-import { cn } from "@/lib/utils";
 import Header from "@/components/layout/Header";
 
 export default function Cart() {

@@ -6,7 +6,7 @@ import { useShoppingCart } from "use-shopping-cart";
 
 export default function CartButton() {
   const { cartCount, formattedTotalPrice } = useShoppingCart();
-
+  
   return (
     <Link
       href={"/cart"}
