@@ -42,7 +42,6 @@ function ProductSection({ products, start, end }: { products: Product[], start: 
 
 export default async function ProductList() {
   const products = await getProducts() || [];
-  console.log(products)
   return (
     <main className="">
       <h1 className="new-product text-center pt-10 pb-4 font-body font-bold tracking-wider text-4xl">

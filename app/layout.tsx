@@ -4,6 +4,7 @@ import '@/styles/globals.css'
 import { cn } from '@/lib/utils'
 import { AppCartProvider } from '@/components/shop/app-cart-provider'
 import { Toaster } from '@/components/ui/toaster'
+import { GoogleOAuthProvider } from '@react-oauth/google'
 
 const oxygem = Oxygen({weight: ["300", "400", "700"], subsets: ['latin'] })
 
@@ -23,12 +24,14 @@ export default function RootLayout({
           <link rel="icon" href='./images/picture-profile-icon-male-icon-human-or-people-sign-and-symbol-vector.jpg'
           type='image/<generated>'
           sizes='<generated>' />
+          <GoogleOAuthProvider clientId={process.env.CLIENT_ID || 'default-client-id'}>
         <AppCartProvider>
           <Toaster />
           <main className=''>
             {children}
             </main>  
         </AppCartProvider>
+        </GoogleOAuthProvider>
         </body>
     </html>
   )

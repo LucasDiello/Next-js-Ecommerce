@@ -14,12 +14,15 @@ import Typography from '@mui/material/Typography';
 import Stack from '@mui/material/Stack';
 import Grid from '@mui/material/Grid';
 import MuiCard from '@mui/material/Card';
+import CircularProgress from '@mui/material/CircularProgress';
 import { styled } from '@mui/material/styles';
 import ForgotPassword from './ForgotPassword';
 import { GoogleIcon, FacebookIcon } from './CurstomIcons';
 import AppTheme from './AppTheme';
 import ColorModeSelect from './ColorModeSelect';
 import Image from 'next/image';
+import { useRouter } from 'next/navigation';
+import { useGoogleLogin } from "@react-oauth/google";
 
 const Card = styled(MuiCard)(({ theme }) => ({
   display: 'flex',
@@ -45,7 +48,33 @@ export default function SignIn(props: { disableCustomTheme?: boolean }) {
   const [emailErrorMessage, setEmailErrorMessage] = React.useState('');
   const [passwordError, setPasswordError] = React.useState(false);
   const [passwordErrorMessage, setPasswordErrorMessage] = React.useState('');
+  const [error, setError] = React.useState('');
   const [open, setOpen] = React.useState(false);
+  const [loading, setLoading] = React.useState(false);
+  const router = useRouter();
+
+  const loginGoogle = useGoogleLogin({
+    onSuccess: (codeResponse) => {
+      console.log(codeResponse);
+      const res = fetch(`https://www.googleapis.com/oauth2/v1/userinfo?access_token=${codeResponse.access_token}`,
+        {
+          method: 'GET',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+        }
+      ).then((res) => res.json()).then((data) => {
+        console.log(data);
+        localStorage.setItem('user', JSON.stringify(data));
+        router.push('/');
+      }
+      )
+    },
+    onError: (error) => {
+      console.error(error);
+      setError("Failed to authenticate with Google");
+    },
+  });
 
   const handleClickOpen = () => {
     setOpen(true);
@@ -55,13 +84,29 @@ export default function SignIn(props: { disableCustomTheme?: boolean }) {
     setOpen(false);
   };
 
-  const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
+    setLoading(true);
     const data = new FormData(event.currentTarget);
-    console.log({
-      email: data.get('email'),
-      password: data.get('password'),
-    });
+    const { email, password } = Object.fromEntries(data.entries());
+    
+    if (!validateInputs()) {
+      setLoading(false);
+      return;
+    }
+
+    const user = {
+      email: email,
+      password: password,
+    };
+
+    localStorage.setItem('user', JSON.stringify(user));
+    
+    // Simula uma requisição com timeout
+    await new Promise((resolve) => setTimeout(resolve, 1500));
+
+    router.push('/');
+    setLoading(false);
   };
 
   const validateInputs = () => {
@@ -178,18 +223,19 @@ export default function SignIn(props: { disableCustomTheme?: boolean }) {
                 type="submit"
                 fullWidth
                 variant="contained"
-                className="bg-[#121212] hover"
+                className="bg-[#121212]"
                 onClick={validateInputs}
+                disabled={loading}
               >
-                Sign in
+                {loading ? <CircularProgress size={24} color="inherit" /> : 'Sign in'}
               </Button>
               <Typography sx={{ textAlign: 'center' }}>
                 Don&apos;t have an account?{' '}
                 <span>
                   <Link
-                    href="/material-ui/getting-started/templates/sign-in/"
                     variant="body2"
                     sx={{ alignSelf: 'center' }}
+                    className='cursor-pointer'
                   >
                     Sign up
                   </Link>
@@ -202,19 +248,11 @@ export default function SignIn(props: { disableCustomTheme?: boolean }) {
                 type="submit"
                 fullWidth
                 variant="outlined"
-                onClick={() => alert('Sign in with Google')}
+                onClick={() => loginGoogle()}
                 startIcon={<GoogleIcon />}
+                disabled={loading}
               >
                 Sign in with Google
-              </Button>
-              <Button
-                type="submit"
-                fullWidth
-                variant="outlined"
-                onClick={() => alert('Sign in with Facebook')}
-                startIcon={<FacebookIcon />}
-              >
-                Sign in with Facebook
               </Button>
             </Box>
           </Card>
