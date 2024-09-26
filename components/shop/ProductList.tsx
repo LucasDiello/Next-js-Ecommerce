@@ -3,6 +3,8 @@ import { Product } from "@/types";
 import Stripe from "stripe";
 import ProductCard from "./ProductCard";
 import "@/styles/cards.css";
+import LimitedOfferSection from "../layout/LimitedOfferSection";
+import Logistic from "../infos/Logistic";
 
 export async function getProducts() {
   try {
@@ -10,6 +12,7 @@ export async function getProducts() {
       limit: 100,
       expand: ["data.default_price"],
     });
+
     return stripeProducts.data.map((product: Stripe.Product): Product => {
       return {
         id: product.id,
@@ -27,72 +30,32 @@ export async function getProducts() {
   }
 }
 
-export default async function ProductList() {
-  const products = await getProducts();
+function ProductSection({ products, start, end }: { products: Product[], start: number, end: number }) {
   return (
-    <main className="bg-gray-200">
-      <section className="grid container gap-4 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 pt-10">
-        {products?.slice(0, 4)?.map((product: Product) => {
-          return <ProductCard key={product.id} {...product} />;
-        })}
-      </section>
-      <div className="w-full lg:h-[90vh] flex flex-col justify-center">
-        <div className="row1-container">
-          <div className="box box-down cyan space-y-5">
-            <h2>Checked Products</h2>
-            <p>
-              Our products are checked and tested before being sent to you.
-            </p>
-            <img
-              src="https://assets.codepen.io/2301174/icon-supervisor.svg"
-              alt=""
-              className="w-[20px] !m-0 xl:w-[70px]"
-            />
-          </div>
+    <section className="grid container gap-4 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 pt-16 pb-16">
+      {products?.slice(start, end)?.map((product: Product) => {
+        return <ProductCard key={product.id} {...product} />;
+      })}
+    </section>
+  );
+}
 
-          <div className="box red space-y-5">
-            <h2>Ready for Delivery</h2>
-            <p>
-              Our warehouses are fully stocked and ready to serve you.
-            </p>
-            <img
-              src="https://assets.codepen.io/2301174/icon-team-builder.svg"
-              alt=""
-              className="w-[20px] !m-0 xl:w-[70px]"
-            />
-          </div>
-
-          <div className="box box-down blue space-y-5">
-            <h2>Priced Products</h2>
-            <p>
-              Our products are priced to ensure the best value for your money.
-            </p>
-            <img
-              src="https://assets.codepen.io/2301174/icon-calculator.svg"
-              alt=""
-              className="w-[20px] !m-0 xl:w-[70px]"
-            />
-          </div>
-        </div>
-        <div className="row2-container">
-          <div className="box orange space-y-5">
-            <h2>Designed</h2>
-            <p>
-              Our products are designed to meet your needs and desires.
-            </p>
-            <img
-              src="https://assets.codepen.io/2301174/icon-karma.svg"
-              alt=""
-              className="w-[20px] !m-0 xl:w-[70px]"
-            />
-          </div>
-        </div>
-      </div>
-      <section className="grid container gap-4 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 pt-16 pb-16">
-        {products?.slice(14, 22)?.map((product: Product) => {
-          return <ProductCard key={product.id} {...product} />;
-        })}
-      </section>
+export default async function ProductList() {
+  const products = await getProducts() || [];
+  console.log(products)
+  return (
+    <main className="">
+      <h1 className="new-product text-center pt-10 pb-4 font-body font-bold tracking-wider text-4xl">
+        New Products
+      </h1>
+      <ProductSection products={products} start={0} end={4} />
+      <LimitedOfferSection />
+      <h1 className="new-product text-center pt-10 pb-4 font-bold font-body tracking-wider text-4xl">
+        More Sales!!
+      </h1>
+      <ProductSection products={products} start={35} end={39} />
+      <Logistic />
+      <ProductSection products={products} start={18} end={22} />
     </main>
   );
 }
