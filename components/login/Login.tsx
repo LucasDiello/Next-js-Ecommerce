@@ -96,13 +96,11 @@ export default function SignIn(props: { disableCustomTheme?: boolean }) {
       <CssBaseline enableColorScheme />
       <ColorModeSelect sx={{ position: 'fixed', top: '1rem', right: '1rem' }} />
       <Grid container direction="row" component="main" sx={{ height: '100vh' }}>
-        {/* Esquerda - Formulário de Login */}
         <Grid
           item
           xs={12}
           md={7}
           component={Stack}
-          direction="column"
           justifyContent="center"
           alignItems="center"
           sx={{ p: 4 }}
