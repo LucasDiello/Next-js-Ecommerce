@@ -28,8 +28,10 @@ export default function ColorModeSelect(props: SelectProps) {
       color="primary"
       aria-label="Theme toggle button"
       onClick={toggleChange}
-      className='fixed right-8 top-4'
-    >
+      sx={{
+        position: "fixed", right:"2rem", top: "1rem"
+      }}
+>
       {mode === 'dark' ? (
         <WbSunnyRoundedIcon fontSize="small" />
       ) : (

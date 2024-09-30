@@ -120,10 +120,10 @@ function Page(props: any) {
   return (
     <AppTheme {...props}>
       <CssBaseline enableColorScheme />
-      <ColorModeSelect sx={{ position: 'fixed', top: '1rem', right: '1rem' }} />
+      <ColorModeSelect />
       <Grid container direction="row" component="main" sx={{ height: '100vh' }}>
         <Grid
-          item
+          item  
           xs={12}
           md={7}
           component={Stack}
