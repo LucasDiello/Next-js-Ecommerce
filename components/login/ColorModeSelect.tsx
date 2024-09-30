@@ -2,31 +2,39 @@ import * as React from 'react';
 import { useColorScheme } from '@mui/material/styles';
 import MenuItem from '@mui/material/MenuItem';
 import Select, { SelectProps } from '@mui/material/Select';
+import { IconButton } from '@mui/material';
+
+import ModeNightRoundedIcon from '@mui/icons-material/ModeNightRounded';
+import WbSunnyRoundedIcon from '@mui/icons-material/WbSunnyRounded';
 
 export default function ColorModeSelect(props: SelectProps) {
   const { mode, setMode } = useColorScheme();
 
+  // Define o tema inicial como "light" se o modo for "system"
   React.useEffect(() => {
-    if (!mode) {
-      setMode('light');
+    if (mode === "system") {
+      setMode("light");
     }
   }, [mode, setMode]);
 
-  if (!mode) {
-    return null;
+  const toggleChange = ()  => {
+    const newMode = mode === 'dark' ? 'light' : 'dark';
+    setMode(newMode);
   }
+
   return (
-    <Select
-      value={mode}
-      onChange={(e) => setMode(e.target.value as  'light' | 'dark')}
-      SelectDisplayProps={{
-        // @ts-ignore
-        'data-screenshot': 'toggle-mode',
-      }}
-      {...props}
+      <IconButton
+      size="small"
+      color="primary"
+      aria-label="Theme toggle button"
+      onClick={toggleChange}
+      className='fixed right-8 top-4'
     >
-          <MenuItem value="light">Light</MenuItem>
-      <MenuItem value="dark">Dark</MenuItem>
-    </Select>
+      {mode === 'dark' ? (
+        <WbSunnyRoundedIcon fontSize="small" />
+      ) : (
+        <ModeNightRoundedIcon fontSize="small" />
+      )}
+    </IconButton>
   );
 }

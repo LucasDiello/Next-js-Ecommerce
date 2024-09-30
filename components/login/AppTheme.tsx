@@ -24,6 +24,7 @@ export default function AppTheme({
   themeComponents,
 }: AppThemeProps) {
   const theme = React.useMemo(() => {
+    console.log(themeComponents)
     return disableCustomTheme
       ? {}
       : createTheme({

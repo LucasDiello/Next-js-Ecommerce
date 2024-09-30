@@ -7,7 +7,7 @@ import { toggleButtonClasses } from '@mui/material/ToggleButton';
 import CheckBoxOutlineBlankRoundedIcon from '@mui/icons-material/CheckBoxOutlineBlankRounded';
 import CheckRoundedIcon from '@mui/icons-material/CheckRounded';
 import RemoveRoundedIcon from '@mui/icons-material/RemoveRounded';
-import { gray, brand } from '../themePrimitives';
+import { gray, brand } from '../../themePrimitives';
 
 /* eslint-disable import/prefer-default-export */
 export const inputsCustomizations: Components<Theme> = {
@@ -31,7 +31,7 @@ export const inputsCustomizations: Components<Theme> = {
     styleOverrides: {
       root: ({ theme }) => ({
         boxShadow: 'none',
-        borderRadius: (theme).shape.borderRadius,
+        borderRadius: theme.shape.borderRadius,
         textTransform: 'none',
         variants: [
           {
@@ -113,12 +113,12 @@ export const inputsCustomizations: Components<Theme> = {
               variant: 'outlined',
             },
             style: {
-              color: (theme).palette.text.primary,
+              color: theme.palette.text.primary,
               border: '1px solid',
               borderColor: gray[200],
-              backgroundColor: `${alpha(gray[300], 0.3)} !important`,
+              backgroundColor: alpha(gray[50], 0.3),
               '&:hover': {
-                backgroundColor: `${gray[100]} !important`,
+                backgroundColor: gray[100],
                 borderColor: gray[300],
               },
               '&:active': {
@@ -225,14 +225,14 @@ export const inputsCustomizations: Components<Theme> = {
     styleOverrides: {
       root: ({ theme }) => ({
         boxShadow: 'none',
-        borderRadius: (theme).shape.borderRadius,
+        borderRadius: theme.shape.borderRadius,
         textTransform: 'none',
         fontWeight: theme.typography.fontWeightMedium,
         letterSpacing: 0,
-        color: (theme).palette.text.primary,
+        color: theme.palette.text.primary,
         border: '1px solid ',
         borderColor: gray[200],
-        backgroundColor: alpha(gray[50], 0.3),
+        backgroundColor: `${alpha(gray[300], 0.3)} !important`,
         '&:hover': {
           backgroundColor: gray[100],
           borderColor: gray[300],
@@ -241,7 +241,7 @@ export const inputsCustomizations: Components<Theme> = {
           backgroundColor: gray[200],
         },
         ...theme.applyStyles('dark', {
-          backgroundColor: gray[800],
+          backgroundColor: `white !important`,
           borderColor: gray[700],
           '&:hover': {
             backgroundColor: gray[900],
@@ -383,10 +383,10 @@ export const inputsCustomizations: Components<Theme> = {
       },
       root: ({ theme }) => ({
         padding: '8px 12px',
-        color: (theme).palette.text.primary,
-        borderRadius: (theme).shape.borderRadius,
-        border: `1px solid ${(theme).palette.divider}`,
-        backgroundColor: (theme).palette.background.default,
+        color: theme.palette.text.primary,
+        borderRadius: theme.shape.borderRadius,
+        border: `1px solid ${theme.palette.divider}`,
+        backgroundColor: theme.palette.background.default,
         transition: 'border 120ms ease-in',
         '&:hover': {
           borderColor: gray[400],
@@ -427,9 +427,9 @@ export const inputsCustomizations: Components<Theme> = {
   MuiInputAdornment: {
     styleOverrides: {
       root: ({ theme }) => ({
-        color: (theme).palette.grey[500],
+        color: theme.palette.grey[500],
         ...theme.applyStyles('dark', {
-          color: (theme).palette.grey[400],
+          color: theme.palette.grey[400],
         }),
       }),
     },

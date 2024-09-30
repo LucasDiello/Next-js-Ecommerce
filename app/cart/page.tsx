@@ -1,16 +1,25 @@
 "use client";
 import { useShoppingCart } from "use-shopping-cart";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Image from "next/image";
 import Header from "@/components/layout/Header";
 import Link from "next/link";
 import { Loader } from "lucide-react";
 import OthersProducts from "@/components/cart/OthersProducts";
 import React from "react";
+import { redirect } from "next/navigation";
+
 
 export default function Cart() {
   const [showConfirmation, setShowConfirmation] = useState<string | null>(null);
-  const [products, setProducts] = useState([]);
+
+  useEffect(() => {
+    const token = localStorage.getItem('token');
+    if (!token) {
+      redirect('/login');
+    }
+  }, []);
+  
   const {
     cartCount,
     cartDetails,
