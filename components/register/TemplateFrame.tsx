@@ -86,8 +86,8 @@ export default function TemplateFrame({
       onClick={toggleColorMode} 
       size="small"
       aria-label="Theme toggle button"
-      className={` ${mode === "dark" ? "hover:!bg-white" : "hover:!bg-black"}
-        ${mode === "dark" ? "hover:!text-black" : "hover:!text-white"} ${mode === "dark" && "!bg-inherit"}
+      className={`text-black ${mode === "dark" ? "hover:!bg-black" : "hover:!bg-black"}
+        ${mode === "dark" ? "hover:!text-white" : "hover:!text-white"} }
         `}
     >
       {mode === 'dark' ? (
