@@ -63,7 +63,7 @@ const SignUpContainer = styled(Stack)(({ theme }) => ({
   }),
 }));
 
-function page() {
+function Page() {
   const [mode, setMode] = React.useState<PaletteMode>('light');
   const [showCustomTheme, setShowCustomTheme] = React.useState(true);
   const SignUpTheme = createTheme(getSignUpTheme(mode));
@@ -284,4 +284,4 @@ function page() {
   );
 }
 
-export default page;
+export default Page;

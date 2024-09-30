@@ -45,7 +45,8 @@ const Card = styled(MuiCard)(({ theme }) => ({
   }),
 }));
 
-function page(props: { disableCustomTheme?: boolean }) {
+function Page(props: any) {
+
   const [emailError, setEmailError] = React.useState(false);
   const [emailErrorMessage, setEmailErrorMessage] = React.useState('');
   const [passwordError, setPasswordError] = React.useState(false);
@@ -250,4 +251,4 @@ function page(props: { disableCustomTheme?: boolean }) {
   );
 }
 
-export default page
+export default Page;
