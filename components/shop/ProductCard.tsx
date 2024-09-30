@@ -31,8 +31,6 @@ export default function ProductCard({
     currency,
     language: "pt-BR",
   });
-  console.log(currency)
-  console.log("formated", Number(price))
 
   async function addToCart(e: React.MouseEvent<HTMLButtonElement>) {
     e.preventDefault();

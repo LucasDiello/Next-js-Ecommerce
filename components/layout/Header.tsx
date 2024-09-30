@@ -1,5 +1,5 @@
 "use client"
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import CartButton from './Cart-button';
 import { ArrowBigLeftIcon } from 'lucide-react';
 import Link from 'next/link';
@@ -8,6 +8,15 @@ import "@/styles/header.css"
 import { CiLogin } from "react-icons/ci";
 
 function Header() {
+
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      setIsLoggedIn(!!localStorage.getItem('user'));
+    }
+  }, []);
+
   return (
     <header className='bg-[#121212] w-full h-9 text-sm'>
       <div className="flex container mx-auto items-center text-white justify-between">
@@ -18,9 +27,10 @@ function Header() {
         <div className='flex justify-center items-center space-x-4'>
           <CartButton />
           {
-            localStorage.getItem('user') ? (
+            isLoggedIn ? (
               <Link onClick={() => {
                 localStorage.clear();
+                setIsLoggedIn(false);
               }} href={"/login"} className="text-white flex items-center justify-center gap-2 sans-font no-underline tracking-wider">
                 <ImExit size={16}/>
                 Log out
