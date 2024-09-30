@@ -6,6 +6,7 @@ import Header from "@/components/layout/Header";
 import Link from "next/link";
 import { Loader } from "lucide-react";
 import OthersProducts from "@/components/cart/OthersProducts";
+import React from "react";
 
 export default function Cart() {
   const [showConfirmation, setShowConfirmation] = useState<string | null>(null);
