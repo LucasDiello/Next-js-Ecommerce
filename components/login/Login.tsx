@@ -227,7 +227,7 @@ export default function SignIn(props: { disableCustomTheme?: boolean }) {
                 onClick={validateInputs}
                 disabled={loading}
               >
-                {loading ? <CircularProgress size={24} color="inherit" /> : 'Sign in'}
+                {loading ? <CircularProgress size={24}  /> : 'Sign in'}
               </Button>
               <Typography sx={{ textAlign: 'center' }}>
                 Don&apos;t have an account?{' '}

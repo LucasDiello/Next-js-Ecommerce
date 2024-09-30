@@ -9,24 +9,24 @@ const OthersProducts = () => {
         altText: "imac image",
         name: "iMac 27”",
         description: "This generation has some improvements, including a longer continuous battery life.",
-        originalPrice: "$399,99",
-        discountedPrice: "$299"
+        originalPrice: "R$3399,99",
+        discountedPrice: "R$2299"
       },
       {
         imageUrl: "https://cdn.awsli.com.br/241/241991/arquivos/ps5-CO007-descricao%20(1).png",
         altText: "playstation image",
         name: "Playstation 5",
         description: "This generation has some improvements, including a longer continuous battery life.",
-        originalPrice: "$799,99",
-        discountedPrice: "$499"
+        originalPrice: "R$5599,99",
+        discountedPrice: "R$44499"
       },
       {
         imageUrl: "https://a-static.mlcdn.com.br/450x450/apple-watch-series-8-41mm-gps-cellular-caixa-grafite-aco-inoxidavel-pulseira-estilo-milanes/magazineluiza/235932100/2b91815ac38696a734dddb9b23bd9e9b.jpg",
         altText: "apple watch image",
         name: "Apple Watch Series 8",
         description: "This generation has some improvements, including a longer continuous battery life.",
-        originalPrice: "$1799,99",
-        discountedPrice: "$1199"
+        originalPrice: "R$1799,99",
+        discountedPrice: "R$1199"
       }
     ];
   

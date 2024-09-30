@@ -8,6 +8,7 @@ import { selectClasses } from '@mui/material/Select';
 import { tabClasses } from '@mui/material/Tab';
 import UnfoldMoreRoundedIcon from '@mui/icons-material/UnfoldMoreRounded';
 import { gray, brand } from '../themePrimitives';
+import { Navigation } from 'lucide-react';
 
 /* eslint-disable import/prefer-default-export */
 export const navigationCustomizations: Components<Theme> = {
@@ -277,3 +278,5 @@ export const navigationCustomizations: Components<Theme> = {
     },
   },
 };
+
+Navigation.displayName = 'Navigation';

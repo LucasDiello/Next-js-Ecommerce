@@ -49,7 +49,7 @@ export default function Cart() {
     setShowConfirmation(null); // Fecha o balão se cancelar
   };
 
-  const numericValue = formattedTotalPrice ? parseFloat(formattedTotalPrice.replace('R$', '').replace(',', '.').trim()) : 0;
+  const total = formattedTotalPrice ? parseFloat(formattedTotalPrice.replace('R$', '').replace(',', '.').trim()) : 0;
 
   return (
     <>
@@ -265,8 +265,8 @@ export default function Cart() {
                       </dt>
                       <dd className="text-base font-medium text-green-600">
                         {
-                          numericValue > 20 ? (
-                            <span>R$ {(numericValue * 0.1).toFixed(2)}</span>
+                          total > 20 ? (
+                            <span>R$ {(total * 0.1).toFixed(2)}</span>
                           ) : <span>
                             R$ 0.00
                           </span>
@@ -280,8 +280,8 @@ export default function Cart() {
                       </dt>
                       <dd className="text-base font-medium text-gray-900 dark:text-white">
                         {
-                          numericValue > 20 ? (
-                            <span>R$ {(numericValue * 0.05).toFixed(2)}</span>
+                          total > 20 ? (
+                            <span>R$ {(total * 0.05).toFixed(2)}</span>
                           ) : <span>
                             R$ 0.00
                           </span>
@@ -296,10 +296,10 @@ export default function Cart() {
                     </dt>
                     <dd className="text-base font-bold text-gray-900 dark:text-white">
                         {
-                          numericValue > 20 ? (
-                            <span>R$ {(numericValue * 0.85).toFixed(2)}</span>
+                          total > 20 ? (
+                            <span>R$ {(total + total * 0.05).toFixed(2)}</span>
                           ) : <span>
-                            R$ {numericValue.toFixed(2)}
+                            R$ {total.toFixed(2)}
                           </span>
                         }
                     </dd>

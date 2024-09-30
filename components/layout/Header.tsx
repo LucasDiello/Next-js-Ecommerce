@@ -28,7 +28,6 @@ function Header() {
             ) : (
               <Link href="/login" className="text-white flex items-center justify-center gap-2 sans-font no-underline tracking-wider">
                 <CiLogin />
-
                 Login
               </Link>
             )

@@ -21,31 +21,31 @@ function Home() {
 
   return (
     <section className="h-[100vh] flex flex-col bg-[#faf5f5]">
-      <div className="w-full  container flex space-x-5 pt-20">
-        <div className="main-card w-[50%] h-[400px] rounded-xl">
+      <div className="w-full md:container flex space-x-5 md:pt-20">
+        <div className="main-card w-[100%] md:w-[50%] h-[400px] md:rounded-xl">
           <div>
             <Image
               src={bannerImage}
               alt="Banner"
-              className="relative  rounded-xl w-[100%] h-[400px] object-cover  "
+              className="relative  md:rounded-xl w-[100%] h-[400px] object-cover  "
             />
-            <div className="absolute top-36 ml-10 space-y-5 flex flex-col justify-center  ">
-              <h2 className="text-white uppercase text-xs tracking-wide">Unique promotions, don't miss out</h2>
-              <div className="flex flex-col space-y-2">
+            <div className="absolute top-20 md:top-36 md:ml-10 ml-4 space-y-5 flex flex-col justify-center  ">
+            <h2 className="text-white uppercase text-xs tracking-wide max-w-[90%] w-full">Unique promotions, don&apos;t miss out</h2>
+            <div className="flex flex-col space-y-2">
               <h1 className="text-5xl font-bold text-[#333]">iPad S13+ Pro.</h1>
               <p className="text-[10px] tracking-wider">
-                <span className="line-through ">$1499.99</span> from $1299.99 or <br />
-                4 payments of $324.99
+                <span className="line-through ">R$2499.99</span> from R$2299.99 or <br />
+                4 payments of R$574.99
               </p>
               </div>
-              <button className="bg-[rgb(31,41,55)] h-10 rounded-xl cursor-pointer  text-xs border-none text-white w-36">
+              <button onClick={scrollToNextSection} className="bg-[rgb(31,41,55)] h-10 rounded-xl cursor-pointer  text-xs border-none text-white w-36">
                 Buy Now
               </button>
             </div>
           </div>
         </div>
 
-        <div className="secundary-cards  w-[50%] h-[400px] flex space-y-5 flex-col">
+        <div className="hidden md:flex secundary-cards  w-[50%] h-[400px]  space-y-5 flex-col">
           <div className="card-top flex space-x-5 ">
             <div className="card-top1 h-[190px] w-[50%] bg-[rgb(200,223,255)] rounded-xl">
               <Image src={card1Top} alt="Card 1" className="object-cover h-full w-full"  />
@@ -53,8 +53,8 @@ function Home() {
               <div className="flex flex-col space-y-2 ">
               <h1 className="text-2xl font-bold text-[#333]">iPad S13+ Pro</h1>
               <p className="text-[10px] tracking-wider">
-                <span className="line-through ">$1499.99</span> from $1299.99 or <br />
-                4 payments of $324.99
+                <span className="line-through ">R$1499.99</span> from R$1299.99 or <br />
+                4 payments of R$324.99
               </p>
               </div>
 
@@ -66,8 +66,8 @@ function Home() {
               <div className="flex flex-col space-y-2 ">
               <h1 className="text-2xl font-bold text-[#333]">iPad S13+ Pro</h1>
               <p className="text-[10px] tracking-wider">
-                <span className="line-through ">$1499.99</span> from $1299.99 or <br />
-                4 payments of $324.99
+                <span className="line-through ">R$1499.99</span> from R$1299.99 or <br />
+                4 payments of R$324.99
               </p>
               </div>
 
@@ -80,11 +80,11 @@ function Home() {
               <div className="absolute top-96  text-white font-bold  space-y-5 flex flex-col justify-center  ">
               <div className="flex flex-col space-y-2  relative left-[6.5rem] bottom-8">
               <h1 className="text-xl font-bold  ">
-              Air Pods Pro.
+              Headphones
               </h1>
               <p className="text-[6px] tracking-wider text-end">
-                <span className="line-through ">$1499.99</span> from $1299.99 or <br />
-                4 payments of $324.99
+                <span className="line-through ">$499.99</span> from $299.99 or <br />
+                4 payments of $74.99
               </p>
               </div>
 
@@ -104,7 +104,7 @@ function Home() {
                 Comfort & style
               </h3>
               <div className="w-full flex justify-end mt-2">
-                <button className="bg-[rgb(31,41,55)] rounded-xl cursor-pointer  text-[10px] border-none text-white w-14 h-5
+                <button onClick={scrollToNextSection} className="bg-[rgb(31,41,55)] rounded-xl cursor-pointer  text-[10px] border-none text-white w-14 h-5
                 ">
                   Buy 
                 </button>

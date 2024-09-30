@@ -7,7 +7,6 @@ const OthersProductsCard = ({ imageUrl, altText, name, description, originalPric
         <div className="space-y-6 overflow-hidden rounded-lg border border-gray-200 bg-white p-6 shadow-sm dark:border-gray-700 dark:bg-gray-800">
           <a href="#" className="overflow-hidden rounded">
             <img
-              className="mx-auto h-40 w-full object-cover"
               src={imageUrl}
               alt={altText}
             />

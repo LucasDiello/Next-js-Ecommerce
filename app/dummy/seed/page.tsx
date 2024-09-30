@@ -12,7 +12,7 @@ async function getDummyProducts() {
       images: product.images,
       default_price_data: {
         unit_amount_decimal: product.price,
-        currency: "usd",
+        currency: "brl",
       },
     };
   });
