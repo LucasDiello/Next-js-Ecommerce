@@ -13,9 +13,10 @@ import { redirect } from "next/navigation";
 export default function Cart() {
   const [showConfirmation, setShowConfirmation] = useState<string | null>(null);
 
+  // this not valid to use in real app, because the user can change the localstorage
   useEffect(() => {
-    const token = localStorage.getItem('token');
-    if (!token) {
+    const user = localStorage.getItem('user');
+    if (!user) {
       redirect('/login');
     }
   }, []);

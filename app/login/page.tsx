@@ -77,7 +77,7 @@ function Page(props: any) {
     };
 
     localStorage.setItem('user', JSON.stringify(user));
-    
+
     if(!validateInputs()) {
       setIsLoading(false)
       return
