@@ -38,7 +38,7 @@ Esta aplicação foi projetada para proporcionar uma experiência de compra intu
 
 1. Configurar Variáveis de Ambiente:
    - Crie o arquivo .env
-   - Configure as variáveis de ambiente no arquivo .env com as informações do Supabase:
+   - Configure as variáveis de ambiente no arquivo .env com as informações do Stripe:
 
      ```
      NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY = "stripe_key"
